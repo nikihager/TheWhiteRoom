@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-mode="niki">
+  <div class="wrap">
+    <header>
+      <div class="brand-switch">
+        <div class="logo-mark" id="logo-niki">
+          <a href="index.html"><span class="line">Niki</span><span class="line">Hager</span></a>
+        </div>
+
+        <div class="logo-twr" id="logo-twr">
+          <a href="https://the-white-room.com" target="_blank" rel="noopener">
+            <span class="line">THE</span><span class="line">WHITE</span><span class="line">ROOM</span>
+          </a>
+        </div>
+
+        <div class="switch" aria-label="Modus wechseln">
+          <button type="button" id="btn-niki" aria-pressed="true">Niki</button>
+          <button type="button" id="btn-twr" aria-pressed="false">White Room</button>
+        </div>
+      </div>
+<nav aria-label="Navigation">
+        <a href="index.html">Start</a>
+        <a href="angebot.html">Angebot</a>
+        <a href="mission.html">Mission</a>
+        <a href="business.html">Raum für Business</a>
+        <a href="philosophie.html">Raum für Philosophie</a>
+        <a href="kunst.html">Raum für Kunst</a>
+        <a href="blog.html">Blog</a>
+        <a href="impressum.html">Impressum</a>
+      </nav>
+    </header>
+<section class="block">
+  <h1>Impressum</h1>
+  <p class="small">Angaben gemäß ECG / UGB / GewO (AT) – bitte final juristisch prüfen.</p>
+
+  <h2>Medieninhaber / Diensteanbieter</h2>
+  <p>
+    Niki Hager<br>
+    Böcklinstraße 24/2/31<br>
+    1020 Wien, Österreich<br>
+    Telefon: +43 699 11 88 1000<br>
+    E-Mail: <a href="mailto:nh@nikihager.com">nh@nikihager.com</a>
+  </p>
+
+  <h2>Unternehmensgegenstand</h2>
+  <p class="small">
+    Unternehmensberatung einschließlich der Unternehmensorganisation, eingeschränkt auf Unternehmensorganisation und Marketing und Vertrieb.
+  </p>
+
+  <h2>Haftungshinweis</h2>
+  <p class="small">
+    Inhalte dieser Website dienen der Information. Trotz sorgfältiger Erstellung wird keine Haftung für Aktualität, Vollständigkeit oder Richtigkeit übernommen.
+  </p>
+
+  <h2>Urheberrecht</h2>
+  <p class="small">
+    Texte und Gedichte © Niki Hager. Jede Verwendung außerhalb des gesetzlich zulässigen Rahmens bedarf der Zustimmung.
+  </p>
+</section>
+    <footer>
+      <p class="small">„Ein guter Gedanke verändert alles.“</p>
+    </footer>
+  </div>
+<script>
+(function(){
+  const body = document.body;
+  const btnNiki = document.getElementById('btn-niki');
+  const btnTwr  = document.getElementById('btn-twr');
+
+  // Default mode
+  const saved = localStorage.getItem('nh_mode') || 'niki';
+  body.setAttribute('data-mode', saved);
+  btnNiki.setAttribute('aria-pressed', saved === 'niki' ? 'true' : 'false');
+  btnTwr.setAttribute('aria-pressed',  saved === 'twr'  ? 'true' : 'false');
+
+  function setMode(mode){
+    body.setAttribute('data-mode', mode);
+    localStorage.setItem('nh_mode', mode);
+    btnNiki.setAttribute('aria-pressed', mode === 'niki' ? 'true' : 'false');
+    btnTwr.setAttribute('aria-pressed',  mode === 'twr'  ? 'true' : 'false');
+  }
+
+  btnNiki && btnNiki.addEventListener('click', function(){ setMode('niki'); });
+  btnTwr  && btnTwr.addEventListener('click', function(){ setMode('twr');  });
+})();
+</script>
+</body>
+</html>
