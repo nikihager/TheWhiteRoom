@@ -1,0 +1,15 @@
+# The White Room
+Primary language: de
+Region: D-A-CH
+Purpose: High-end clarity interventions, essays on responsibility, decision-making, silence.
+
+Key pages:
+- /index.html
+- /about.html
+- /angebot.html
+- /business.html
+- /kunst.html
+- /blog.html
+
+Brand: The White Room
+Contact: info@example.com
